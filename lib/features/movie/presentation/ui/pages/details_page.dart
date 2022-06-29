@@ -38,7 +38,10 @@ class DetailsPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Icon(Icons.title),
-                  Text(movie.originalTitle),
+                  Text(
+                    movie.originalTitle,
+                    style: Theme.of(context).textTheme.subtitle1,
+                  ),
                 ],
               ),
               const SizedBox(height: 8),
@@ -46,7 +49,10 @@ class DetailsPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Icon(Icons.new_releases),
-                  Text(movie.releaseDate),
+                  Text(
+                    movie.releaseDate,
+                    style: Theme.of(context).textTheme.subtitle1,
+                  ),
                 ],
               ),
             ],

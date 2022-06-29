@@ -19,8 +19,16 @@ class MyApp extends StatelessWidget {
     
     return MaterialApp(
       title: 'App Filmes Marvel',
-      theme: ThemeData.dark(),
+      theme: _buildTheme(Brightness.dark),
       home: HomePage(),
     );
   }
+
+  ThemeData _buildTheme(brightness) {
+  var baseTheme = ThemeData(brightness: brightness);
+
+  return baseTheme.copyWith(
+    textTheme: GoogleFonts.latoTextTheme(baseTheme.textTheme),
+  );
+}
 }
