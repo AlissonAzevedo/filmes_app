@@ -51,14 +51,20 @@ class CustomListCardWidget extends StatelessWidget {
                     children: [
                       Text(
                         movie.title,
-                        style: Theme.of(context).textTheme.headline6,
+                        style: Theme.of(context).textTheme.headline5,
                         softWrap: true,
                         overflow: TextOverflow.visible,
                       ),
                       Spacer(),
-                      Text('Popularidade: ' + movie.popularity.toString()),
+                      Text(
+                        'Popularidade: ' + movie.popularity.toString(),
+                        style: Theme.of(context).textTheme.subtitle1,
+                      ),
                       const SizedBox(height: 10),
-                      Text('IMDb: ' + movie.voteAverage.toString() +'/10'),
+                      Text(
+                        'IMDb: ' + movie.voteAverage.toString() +'/10',
+                        style: Theme.of(context).textTheme.subtitle1,
+                      ),
                     ],
                   ),
                 ),
