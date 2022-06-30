@@ -1,7 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:filmes_app/features/movie/presentation/ui/widgets/avaliacao.dart';
+import 'package:filmes_app/features/movie/presentation/ui/widgets/chip.dart';
 import 'package:flutter/material.dart';
 import 'package:filmes_app/features/movie/domain/entities/movie_details_entity.dart';
 import 'package:filmes_app/core/utils/apis.utils.dart';
+import 'package:intl/intl.dart';
 
 class DetailsPage extends StatelessWidget {
   final MovieDetailsEntity movie;
@@ -9,6 +12,7 @@ class DetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    DateTime dt = DateTime.parse(movie.releaseDate);
     return Scaffold(
       appBar: AppBar(
         title: Text(movie.title),
@@ -18,9 +22,9 @@ class DetailsPage extends StatelessWidget {
           padding: const EdgeInsets.all(24.0),
           child: Column(
             children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 15.0),
-                  child: Row(
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15.0),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Icon(Icons.title_rounded,
@@ -30,8 +34,8 @@ class DetailsPage extends StatelessWidget {
                       style: Theme.of(context).textTheme.headline5,
                     ),
                   ],
-              ),
                 ),
+              ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * .55,
                 width: MediaQuery.of(context).size.width,
@@ -40,6 +44,16 @@ class DetailsPage extends StatelessWidget {
                   child: CachedNetworkImage(
                     imageUrl: API.REQUEST_IMG(movie.posterPath),
                   ),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Rate(movie.voteAverage),
+                    ChipDate(date: dt)
+                  ],
                 ),
               ),
               const SizedBox(height: 20),

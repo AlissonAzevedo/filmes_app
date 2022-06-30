@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Filmes',
+                          'Marvel Films',
                           style: GoogleFonts.lato(
                             textStyle: Theme.of(context).textTheme.headline4,
                             fontSize: 48,
