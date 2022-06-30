@@ -28,7 +28,7 @@ class GetMoviesLocalDataSourceDecoratorImp
     var prefs = await SharedPreferences.getInstance();
     String jsonMovies = jsonEncode(movies.toJson());
     prefs.setString('movies_cache', jsonMovies);
-    print('salvou no cache ');
+    print('Salvo no Cache');
   }
 
   Future<MovieEntity> _getInCache() async {
@@ -36,7 +36,7 @@ class GetMoviesLocalDataSourceDecoratorImp
     var moviesJsonString = prefs.getString('movies_cache')!;
     var json = jsonDecode(moviesJsonString);
     var movies = MovieDto.fromJson(json);
-    print('recuperou do cache os filmes ' + movies.toString());
+    print('Pegou do cache ' + movies.toString());
     return movies;
   }
 }

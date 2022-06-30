@@ -100,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           separatorBuilder: (_, __) => Divider(),
                         )
-                      : Lottie.asset('assets/lottie.json');
+                      : Center(child: Lottie.asset('assets/45732-cinema-animation.json'));
                 },
               ),
             ],
