@@ -26,15 +26,15 @@ class CustomListCardWidget extends StatelessWidget {
           height: 200,
           decoration: BoxDecoration(
             color: Colors.black54,
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: BorderRadius.circular(6),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15),
-                  bottomLeft: Radius.circular(15),
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(6),
+                  bottomLeft: Radius.circular(6),
                 ),
                 child: Hero(
                   tag: movie.id,
@@ -51,11 +51,11 @@ class CustomListCardWidget extends StatelessWidget {
                     children: [
                       Text(
                         movie.title,
-                        style: Theme.of(context).textTheme.headline5,
+                        style: Theme.of(context).textTheme.headline5, 
                         softWrap: true,
                         overflow: TextOverflow.visible,
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Text(
                         'Popularidade: ' + movie.popularity.toString(),
                         style: Theme.of(context).textTheme.subtitle1,

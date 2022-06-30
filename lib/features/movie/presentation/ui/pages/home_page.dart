@@ -48,6 +48,7 @@ class _HomePageState extends State<HomePage> {
                             fontSize: 48,
                             fontWeight: FontWeight.w700,
                             fontStyle: FontStyle.italic,
+                            color: Colors.amber, 
                           ),
                         ),
                         const SizedBox(height: 20),
@@ -62,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                               ],
                               stops: const [0, 7, 1],
                             ),
-                            borderRadius: BorderRadius.circular(15),
+                            borderRadius: BorderRadius.circular(6),
                           ),
                           child: Row(
                             children: [
@@ -75,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                                     focusColor: Colors.white30,
                                     hoverColor: Colors.white30,
                                   ),
-                                  cursorColor: Colors.white30,
+                                  cursorColor: Colors.amber,
                                 ),
                               )
                             ],

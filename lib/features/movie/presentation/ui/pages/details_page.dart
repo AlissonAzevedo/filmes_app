@@ -18,6 +18,20 @@ class DetailsPage extends StatelessWidget {
           padding: const EdgeInsets.all(24.0),
           child: Column(
             children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 15.0),
+                  child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(Icons.title_rounded,
+                    color: Colors.amber),
+                    Text(
+                      movie.originalTitle,
+                      style: Theme.of(context).textTheme.headline5,
+                    ),
+                  ],
+              ),
+                ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * .55,
                 width: MediaQuery.of(context).size.width,
@@ -34,21 +48,13 @@ class DetailsPage extends StatelessWidget {
                 style: Theme.of(context).textTheme.subtitle1,
               ),
               const SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Icon(Icons.title),
-                  Text(
-                    movie.originalTitle,
-                    style: Theme.of(context).textTheme.subtitle1,
-                  ),
-                ],
-              ),
+
               const SizedBox(height: 8),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.new_releases),
+                  const Icon(Icons.new_releases_outlined,
+                  color: Colors.amber),
                   Text(
                     movie.releaseDate,
                     style: Theme.of(context).textTheme.subtitle1,

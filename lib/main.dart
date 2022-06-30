@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
       title: 'App Filmes Marvel',
       theme: _buildTheme(Brightness.dark),
       home: HomePage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 
