@@ -1,9 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:filmes_app/features/movie/presentation/ui/widgets/seta_trend.dart';
 import 'package:flutter/material.dart';
 
 import 'package:filmes_app/core/utils/apis.utils.dart';
 import 'package:filmes_app/features/movie/domain/entities/movie_details_entity.dart';
 import 'package:filmes_app/features/movie/presentation/ui/pages/details_page.dart';
+
+import 'avaliacao.dart';
 
 class CustomListCardWidget extends StatelessWidget {
   final MovieDetailsEntity movie;
@@ -55,16 +58,9 @@ class CustomListCardWidget extends StatelessWidget {
                         softWrap: true,
                         overflow: TextOverflow.visible,
                       ),
-                      const Spacer(),
-                      Text(
-                        'Popularidade: ' + movie.popularity.toString(),
-                        style: Theme.of(context).textTheme.subtitle1,
-                      ),
-                      const SizedBox(height: 10),
-                      Text(
-                        'IMDb: ' + movie.voteAverage.toString() +'/10',
-                        style: Theme.of(context).textTheme.subtitle1,
-                      ),
+                      Spacer(),
+                      Rate(movie.voteAverage),
+                      Seta(movie.popularity),
                     ],
                   ),
                 ),
